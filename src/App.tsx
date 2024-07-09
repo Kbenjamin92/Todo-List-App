@@ -1,4 +1,5 @@
 import './App.css'
+import { Header } from './components/Header'
 import { Grid, GridItem } from '@chakra-ui/react'
 
 function App() {
@@ -28,7 +29,7 @@ function App() {
     }}
     gap={1}>
       <GridItem area={'header'}>
-        <h1>Header</h1>
+        <Header />
       </GridItem>
       <GridItem area={'aside'}>
         <h1>Aside</h1>
@@ -39,7 +40,6 @@ function App() {
       <GridItem area={'footer'}>
         <h1>Footer</h1>
       </GridItem>
-
     </Grid>
     </>
   )
