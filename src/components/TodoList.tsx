@@ -5,6 +5,8 @@ interface TodoProps {
     todos: Todo | undefined
 }
 
+// add a card component to this component to display a card with the todd data and a button to delete and update the todo
+
 export const TodoList = ({ todos }: TodoProps) => {
   return (
     <>
