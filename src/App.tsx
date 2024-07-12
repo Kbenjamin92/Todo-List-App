@@ -1,6 +1,7 @@
 import './App.css'
 import { Header } from './components/Header'
 import { Grid, GridItem } from '@chakra-ui/react'
+import TodoForm from './components/TodoForm'
 
 function App() {
   
@@ -32,7 +33,7 @@ function App() {
         <Header />
       </GridItem>
       <GridItem area={'aside'}>
-        <h1>Aside</h1>
+        <TodoForm />
       </GridItem>
       <GridItem area={'main'}>
         <h1>Main</h1>

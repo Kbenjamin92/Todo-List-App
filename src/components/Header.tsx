@@ -12,7 +12,7 @@ export const Header = () => {
         lg: '4xl'
       }}
       >
-         List Helper
+         Todo Helper
       </Heading>
     </>
   )
