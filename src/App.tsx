@@ -1,10 +1,16 @@
 import './App.css'
 import { Header } from './components/Header'
 import { Grid, GridItem } from '@chakra-ui/react'
-import TodoForm from './components/TodoForm'
+import { TodoForm } from './components/TodoForm'
+import { useState } from 'react'
+import { Todo } from './interfaces'
+import { TodoList } from './components/TodoList'
 
-function App() {
-  
+
+// Figure out a way to manage the list of todos with unique IDS 
+const App = () => {
+  const [todos, setTodo] = useState<Todo>();
+
   return (
     <>
     <Grid
@@ -33,10 +39,10 @@ function App() {
         <Header />
       </GridItem>
       <GridItem area={'aside'}>
-        <TodoForm />
+        <TodoForm setTodo={setTodo}/>
       </GridItem>
       <GridItem area={'main'}>
-        <h1>Main</h1>
+        <TodoList todos={todos} />
       </GridItem>
       <GridItem area={'footer'}>
         <h1>Footer</h1>
