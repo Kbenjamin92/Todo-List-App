@@ -1,17 +1,13 @@
 import { Input, Button } from '@chakra-ui/react'
 import { VStack } from '@chakra-ui/react'
-import { useState } from 'react'
 import { useForm } from 'react-hook-form'
+import { Todo } from '../interfaces'
 
-
-interface Todo {
-  id: number
-  title: string;
-  description: string
+interface Props {
+  setTodo: React.Dispatch<React.SetStateAction<Todo | undefined>>;
 }
 
-const TodoForm: React.FC = () => {
-  const [todo, setTodo] = useState<Todo>();
+export const TodoForm = ({ setTodo }: Props) => {
   const { 
     register, 
     handleSubmit, 
@@ -22,12 +18,10 @@ const TodoForm: React.FC = () => {
     setTodo(data)
     reset()
   }
-
   const handleChange =  (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
     setValue(name as keyof Todo, value)
-  }
-
+  } 
   return (
     <>
     <form onSubmit={handleSubmit(onSubmit)}>
@@ -57,5 +51,3 @@ const TodoForm: React.FC = () => {
     </>
   )
 }
-
-export default TodoForm
